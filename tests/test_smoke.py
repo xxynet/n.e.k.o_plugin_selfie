@@ -1,4 +1,4 @@
-"""Host-visible discovery must retain the selfie entry after packaging."""
+"""Packaged discovery must not expose a duplicate agent-routed selfie entry."""
 from pathlib import Path
 
 import pytest
@@ -12,4 +12,5 @@ def test_packaged_metadata_matches_the_source_tree():
         pytest.skip("Local runtime profiles are excluded; validate a clean source export instead")
     metadata = read_packaged_metadata(root)
     assert metadata is not None
-    assert any(entry["id"] == "send_selfie" for entry in metadata.entries)
+    assert metadata.entries == []
+    assert "send_selfie" not in metadata.entry_methods

@@ -313,3 +313,35 @@ async def test_unreadable_reference_does_not_start_generation(plugin, monkeypatc
     assert result["error"] == "SELFIE_REFERENCE"
     generate.assert_not_awaited()
     plugin.push_message.assert_not_called()
+
+@pytest.mark.asyncio
+async def test_only_dialog_tool_can_generate_selfie(plugin, monkeypatch):
+    # Use the actual SDK registration and entry discovery, not mocked registry methods.
+    plugin._routers = []
+    plugin._dynamic_entries = {}
+    plugin._llm_tools = {}
+    plugin._notify_dynamic_entry_registered = Mock()
+    plugin._notify_dynamic_entry_unregistered = Mock()
+    plugin._notify_llm_tool_registered = Mock()
+    plugin._notify_llm_tool_unregistered = Mock()
+    generate = AsyncMock(return_value=image_bytes())
+    monkeypatch.setattr(_volcengine, "generate", generate)
+
+    await plugin.startup()
+    await plugin.config_change()
+    entries = plugin.collect_entries()
+    action_entries = {key: handler for key, handler in entries.items()
+                      if handler.meta.event_type == "plugin_entry"}
+    # The host hides this reserved prefix from its independent plugin Agent.
+    assert set(action_entries) == {"__llm_tool__send_selfie"}
+    assert [tool["name"] for tool in plugin.list_llm_tools()] == ["send_selfie"]
+
+    result = await action_entries["__llm_tool__send_selfie"].handler(scene="in a garden")
+    assert result["submitted"] is True
+    generate.assert_awaited_once()
+    plugin.push_message.assert_called_once()
+
+    await plugin.shutdown()
+    assert plugin.list_llm_tools() == []
+    assert not any(handler.meta.event_type == "plugin_entry"
+                   for handler in plugin.collect_entries().values())

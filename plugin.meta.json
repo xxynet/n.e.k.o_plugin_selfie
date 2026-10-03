@@ -4,116 +4,10 @@
     "os": "win32",
     "python": "3.11"
   },
-  "entries": [
-    {
-      "auto_start": false,
-      "description": {
-        "$i18n": "entry.description"
-      },
-      "event_key": "selfie.send_selfie",
-      "event_type": "plugin_entry",
-      "id": "send_selfie",
-      "input_schema": {
-        "additionalProperties": false,
-        "properties": {
-          "scene": {
-            "description": {
-              "$i18n": "entry.scene"
-            },
-            "maxLength": 4000,
-            "type": "string"
-          }
-        },
-        "required": [
-          "scene"
-        ],
-        "type": "object"
-      },
-      "kind": "action",
-      "llm_result_fields": [
-        "summary",
-        "submitted"
-      ],
-      "llm_result_schema": {
-        "properties": {
-          "submitted": {},
-          "summary": {}
-        },
-        "required": [
-          "summary",
-          "submitted"
-        ],
-        "type": "object"
-      },
-      "metadata": {},
-      "model_validate": true,
-      "name": {
-        "$i18n": "entry.name"
-      },
-      "return_message": "",
-      "timeout": 270.0
-    }
-  ],
+  "entries": [],
   "entries_config_sha256": "",
-  "entry_methods": {
-    "send_selfie": "send_selfie"
-  },
+  "entry_methods": {},
   "handlers": {
-    "selfie.send_selfie": {
-      "auto_start": false,
-      "description": {
-        "$i18n": "entry.description"
-      },
-      "dynamic": false,
-      "enabled": true,
-      "event_type": "plugin_entry",
-      "extra": {},
-      "id": "send_selfie",
-      "input_schema": {
-        "additionalProperties": false,
-        "properties": {
-          "scene": {
-            "description": {
-              "$i18n": "entry.scene"
-            },
-            "maxLength": 4000,
-            "type": "string"
-          }
-        },
-        "required": [
-          "scene"
-        ],
-        "type": "object"
-      },
-      "kind": "action",
-      "llm_result_fields": [
-        "summary",
-        "submitted"
-      ],
-      "llm_result_schema": {
-        "properties": {
-          "submitted": {},
-          "summary": {}
-        },
-        "required": [
-          "summary",
-          "submitted"
-        ],
-        "type": "object"
-      },
-      "metadata": {},
-      "model_validate": true,
-      "name": {
-        "$i18n": "entry.name"
-      },
-      "persist": null,
-      "quick_action": false,
-      "quick_action_config": {
-        "icon": null,
-        "priority": 0
-      },
-      "timeout": 270.0
-    },
     "selfie:lifecycle:config_change": {
       "auto_start": false,
       "description": "",
@@ -191,66 +85,11 @@
         "priority": 0
       },
       "timeout": null
-    },
-    "selfie:plugin_entry:send_selfie": {
-      "auto_start": false,
-      "description": {
-        "$i18n": "entry.description"
-      },
-      "dynamic": false,
-      "enabled": true,
-      "event_type": "plugin_entry",
-      "extra": {},
-      "id": "send_selfie",
-      "input_schema": {
-        "additionalProperties": false,
-        "properties": {
-          "scene": {
-            "description": {
-              "$i18n": "entry.scene"
-            },
-            "maxLength": 4000,
-            "type": "string"
-          }
-        },
-        "required": [
-          "scene"
-        ],
-        "type": "object"
-      },
-      "kind": "action",
-      "llm_result_fields": [
-        "summary",
-        "submitted"
-      ],
-      "llm_result_schema": {
-        "properties": {
-          "submitted": {},
-          "summary": {}
-        },
-        "required": [
-          "summary",
-          "submitted"
-        ],
-        "type": "object"
-      },
-      "metadata": {},
-      "model_validate": true,
-      "name": {
-        "$i18n": "entry.name"
-      },
-      "persist": null,
-      "quick_action": false,
-      "quick_action_config": {
-        "icon": null,
-        "priority": 0
-      },
-      "timeout": 270.0
     }
   },
   "schema_version": 4,
   "sdk_version": "0.1.0",
-  "source_bytes": 85252,
+  "source_bytes": 86343,
   "source_files": [
     ".gitattributes",
     ".gitignore",
@@ -275,5 +114,5 @@
     "tests/test_selfie.py",
     "tests/test_smoke.py"
   ],
-  "source_sha256": "7b3bbecd2f08a265eaabba4a89dcb131ca34cec19e730833760a3d514aff2c2b"
+  "source_sha256": "3001f7049d5be4711218e6be3db46bd884b0182b7ed891dc854422b76b4a240b"
 }

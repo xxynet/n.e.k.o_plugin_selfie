@@ -4,7 +4,7 @@ import time
 
 import httpx
 
-from plugin.sdk.plugin import NekoPluginBase, neko_plugin, plugin_entry, lifecycle, Ok, Err, SdkError
+from plugin.sdk.plugin import NekoPluginBase, neko_plugin, lifecycle, Ok
 from plugin.sdk.shared.i18n import tr
 
 from . import _chat, _volcengine
@@ -127,20 +127,6 @@ class SelfiePlugin(NekoPluginBase):
             return self._failure("internal")
         finally:
             self._busy = False
-
-    @plugin_entry(
-        id="send_selfie",
-        name=tr("entry.name"),
-        description=tr("entry.description"),
-        input_schema=_PARAMETERS,
-        timeout=270.0,
-        llm_result_fields=["summary", "submitted"],
-    )
-    async def send_selfie(self, scene: str, **_):
-        result = await self._generate_and_push(scene)
-        if result.get("is_error"):
-            return Err(SdkError(result["output"]["summary"], code=result["error"]))
-        return Ok(result)
 
     async def send_selfie_tool(self, scene: str, **_):
         return await self._generate_and_push(scene)
