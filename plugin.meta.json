@@ -1,0 +1,279 @@
+{
+  "build_env": {
+    "arch": "AMD64",
+    "os": "win32",
+    "python": "3.11"
+  },
+  "entries": [
+    {
+      "auto_start": false,
+      "description": {
+        "$i18n": "entry.description"
+      },
+      "event_key": "selfie.send_selfie",
+      "event_type": "plugin_entry",
+      "id": "send_selfie",
+      "input_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "scene": {
+            "description": {
+              "$i18n": "entry.scene"
+            },
+            "maxLength": 4000,
+            "type": "string"
+          }
+        },
+        "required": [
+          "scene"
+        ],
+        "type": "object"
+      },
+      "kind": "action",
+      "llm_result_fields": [
+        "summary",
+        "submitted"
+      ],
+      "llm_result_schema": {
+        "properties": {
+          "submitted": {},
+          "summary": {}
+        },
+        "required": [
+          "summary",
+          "submitted"
+        ],
+        "type": "object"
+      },
+      "metadata": {},
+      "model_validate": true,
+      "name": {
+        "$i18n": "entry.name"
+      },
+      "return_message": "",
+      "timeout": 270.0
+    }
+  ],
+  "entries_config_sha256": "",
+  "entry_methods": {
+    "send_selfie": "send_selfie"
+  },
+  "handlers": {
+    "selfie.send_selfie": {
+      "auto_start": false,
+      "description": {
+        "$i18n": "entry.description"
+      },
+      "dynamic": false,
+      "enabled": true,
+      "event_type": "plugin_entry",
+      "extra": {},
+      "id": "send_selfie",
+      "input_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "scene": {
+            "description": {
+              "$i18n": "entry.scene"
+            },
+            "maxLength": 4000,
+            "type": "string"
+          }
+        },
+        "required": [
+          "scene"
+        ],
+        "type": "object"
+      },
+      "kind": "action",
+      "llm_result_fields": [
+        "summary",
+        "submitted"
+      ],
+      "llm_result_schema": {
+        "properties": {
+          "submitted": {},
+          "summary": {}
+        },
+        "required": [
+          "summary",
+          "submitted"
+        ],
+        "type": "object"
+      },
+      "metadata": {},
+      "model_validate": true,
+      "name": {
+        "$i18n": "entry.name"
+      },
+      "persist": null,
+      "quick_action": false,
+      "quick_action_config": {
+        "icon": null,
+        "priority": 0
+      },
+      "timeout": 270.0
+    },
+    "selfie:lifecycle:config_change": {
+      "auto_start": false,
+      "description": "",
+      "dynamic": false,
+      "enabled": true,
+      "event_type": "lifecycle",
+      "extra": {},
+      "id": "config_change",
+      "input_schema": {
+        "properties": {},
+        "type": "object"
+      },
+      "kind": "lifecycle",
+      "llm_result_fields": null,
+      "llm_result_schema": null,
+      "metadata": {},
+      "model_validate": true,
+      "name": "config_change",
+      "persist": null,
+      "quick_action": false,
+      "quick_action_config": {
+        "icon": null,
+        "priority": 0
+      },
+      "timeout": null
+    },
+    "selfie:lifecycle:shutdown": {
+      "auto_start": false,
+      "description": "",
+      "dynamic": false,
+      "enabled": true,
+      "event_type": "lifecycle",
+      "extra": {},
+      "id": "shutdown",
+      "input_schema": {
+        "properties": {},
+        "type": "object"
+      },
+      "kind": "lifecycle",
+      "llm_result_fields": null,
+      "llm_result_schema": null,
+      "metadata": {},
+      "model_validate": true,
+      "name": "shutdown",
+      "persist": null,
+      "quick_action": false,
+      "quick_action_config": {
+        "icon": null,
+        "priority": 0
+      },
+      "timeout": null
+    },
+    "selfie:lifecycle:startup": {
+      "auto_start": false,
+      "description": "",
+      "dynamic": false,
+      "enabled": true,
+      "event_type": "lifecycle",
+      "extra": {},
+      "id": "startup",
+      "input_schema": {
+        "properties": {},
+        "type": "object"
+      },
+      "kind": "lifecycle",
+      "llm_result_fields": null,
+      "llm_result_schema": null,
+      "metadata": {},
+      "model_validate": true,
+      "name": "startup",
+      "persist": null,
+      "quick_action": false,
+      "quick_action_config": {
+        "icon": null,
+        "priority": 0
+      },
+      "timeout": null
+    },
+    "selfie:plugin_entry:send_selfie": {
+      "auto_start": false,
+      "description": {
+        "$i18n": "entry.description"
+      },
+      "dynamic": false,
+      "enabled": true,
+      "event_type": "plugin_entry",
+      "extra": {},
+      "id": "send_selfie",
+      "input_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "scene": {
+            "description": {
+              "$i18n": "entry.scene"
+            },
+            "maxLength": 4000,
+            "type": "string"
+          }
+        },
+        "required": [
+          "scene"
+        ],
+        "type": "object"
+      },
+      "kind": "action",
+      "llm_result_fields": [
+        "summary",
+        "submitted"
+      ],
+      "llm_result_schema": {
+        "properties": {
+          "submitted": {},
+          "summary": {}
+        },
+        "required": [
+          "summary",
+          "submitted"
+        ],
+        "type": "object"
+      },
+      "metadata": {},
+      "model_validate": true,
+      "name": {
+        "$i18n": "entry.name"
+      },
+      "persist": null,
+      "quick_action": false,
+      "quick_action_config": {
+        "icon": null,
+        "priority": 0
+      },
+      "timeout": 270.0
+    }
+  },
+  "schema_version": 4,
+  "sdk_version": "0.1.0",
+  "source_bytes": 85252,
+  "source_files": [
+    ".gitattributes",
+    ".gitignore",
+    "LICENSE",
+    "README.md",
+    "__init__.py",
+    "_chat.py",
+    "_config.py",
+    "_media.py",
+    "_volcengine.py",
+    "config.schema.json",
+    "i18n/en.json",
+    "i18n/es.json",
+    "i18n/ja.json",
+    "i18n/ko.json",
+    "i18n/pt.json",
+    "i18n/ru.json",
+    "i18n/zh-CN.json",
+    "i18n/zh-TW.json",
+    "plugin.toml",
+    "pyproject.toml",
+    "tests/test_selfie.py",
+    "tests/test_smoke.py"
+  ],
+  "source_sha256": "7b3bbecd2f08a265eaabba4a89dcb131ca34cec19e730833760a3d514aff2c2b"
+}
