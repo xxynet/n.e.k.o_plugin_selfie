@@ -93,7 +93,7 @@ uv run --no-sync python -m plugin.neko_plugin_cli build selfie --keep-staging
 从 GitHub 克隆到 N.E.K.O. 项目的 `plugin/plugins/selfie` 目录后，在插件管理器中刷新并配置。
 
 ```powershell
-git clone https://github.com/xxynet/neko-selfie.git plugin/plugins/selfie
+git clone https://github.com/xxynet/n.e.k.o_plugin_selfie.git plugin/plugins/selfie
 ```
 
 本地 `profiles.toml`、`profiles/`、环境文件和私有参考图不会提交到 Git，构建也会排除它们。

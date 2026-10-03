@@ -89,7 +89,7 @@
   },
   "schema_version": 4,
   "sdk_version": "0.1.0",
-  "source_bytes": 86343,
+  "source_bytes": 86353,
   "source_files": [
     ".gitattributes",
     ".gitignore",
@@ -114,5 +114,5 @@
     "tests/test_selfie.py",
     "tests/test_smoke.py"
   ],
-  "source_sha256": "3001f7049d5be4711218e6be3db46bd884b0182b7ed891dc854422b76b4a240b"
+  "source_sha256": "bdb930dbe185dc9ff54255e2c31f8ef0a3fefd0c46807ad1a08f99766eef71cb"
 }
