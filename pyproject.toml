@@ -5,4 +5,4 @@ requires-python = ">=3.11"
 dependencies = []
 
 [tool.neko.build]
-exclude = ["profiles.toml", "profiles/**", ".env", ".env.*", "*.log", "reference.*", "references/**"]
+exclude = ["profiles.toml", "profiles", "profiles/**", ".env", ".env.*", "*.log", "reference.*", "references", "references/**", "store.db", "store.db-*"]

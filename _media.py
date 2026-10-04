@@ -10,7 +10,6 @@ from io import BytesIO
 from pathlib import Path
 from urllib.parse import urlsplit
 
-import httpx
 from PIL import Image, ImageOps, UnidentifiedImageError
 
 from ._config import SelfieError

@@ -12,9 +12,8 @@ import httpx
 import pytest
 from PIL import Image
 
-from plugin.plugins.selfie import SelfiePlugin, _chat, _volcengine
-from plugin.plugins.selfie._config import Settings, SelfieError
-from plugin.plugins.selfie import _media
+from plugin.plugins.selfie import SelfiePlugin, _chat, _media, _volcengine
+from plugin.plugins.selfie._config import SelfieError, Settings
 from plugin.sdk.shared.i18n import PluginI18n
 
 ROOT = Path(__file__).resolve().parents[1]

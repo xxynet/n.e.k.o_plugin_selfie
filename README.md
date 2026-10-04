@@ -82,7 +82,7 @@ uv run --no-sync pytest plugin/plugins/selfie/tests -q
 uv run --no-sync python -m plugin.neko_plugin_cli build selfie --keep-staging
 ```
 
-本插件作为内置插件复用宿主已有的 httpx 与 Pillow，不新增生产依赖。`check` 中关于独立仓库、IDE 和 GitHub 工作流的提示不影响内置插件运行。
+本插件复用宿主已有的 httpx 与 Pillow，不新增生产依赖。仓库包含官方生成的 IDE 配置和 GitHub 工作流，可执行严格发布检查。
 
 测试使用模拟 HTTP 和宿主，不调用真实生图接口或产生生图费用。
 源码修改后需重新构建，并将 staging 中的 `plugin.meta.json` 复制回本目录。
@@ -99,3 +99,9 @@ git clone https://github.com/xxynet/n.e.k.o_plugin_selfie.git plugin/plugins/sel
 本地 `profiles.toml`、`profiles/`、环境文件和私有参考图不会提交到 Git，构建也会排除它们。
 请通过插件管理器填写自己的密钥，不要把真实密钥写入公开的 `plugin.toml`。
 插件遵循 Apache-2.0 许可证，许可证见 `LICENSE`。
+
+## GitHub 工作流
+
+`verify.yml` 在 push、pull request 或手动触发时执行官方插件验证。
+`release.yml` 在推送 `v*` 标签时执行官方 Market 发布检查，生成插件包、检查报告和证据文件，并发布 GitHub Release。
+发布标签必须与 `plugin.toml` 的版本一致，例如 `0.1.0` 对应 `v0.1.0`；手动运行 Release 工作流也必须选择该标签。

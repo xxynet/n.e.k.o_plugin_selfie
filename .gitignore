@@ -14,3 +14,5 @@ build/
 *.log
 /reference.*
 /references/
+store.db
+store.db-*

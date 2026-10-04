@@ -1,7 +1,7 @@
 """Validated settings for the two selfie generation protocols."""
+import math
 from dataclasses import dataclass, field
 from urllib.parse import urlsplit
-import math
 
 
 class SelfieError(Exception):

@@ -4,11 +4,11 @@ import time
 
 import httpx
 
-from plugin.sdk.plugin import NekoPluginBase, neko_plugin, lifecycle, Ok
+from plugin.sdk.plugin import NekoPluginBase, Ok, lifecycle, neko_plugin
 from plugin.sdk.shared.i18n import tr
 
 from . import _chat, _volcengine
-from ._config import Settings, SelfieError
+from ._config import SelfieError, Settings
 from ._media import load_reference
 
 _PARAMETERS = {

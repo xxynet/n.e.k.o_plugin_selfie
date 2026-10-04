@@ -89,7 +89,7 @@
   },
   "schema_version": 4,
   "sdk_version": "0.1.0",
-  "source_bytes": 86353,
+  "source_bytes": 87462,
   "source_files": [
     ".gitattributes",
     ".gitignore",
@@ -111,8 +111,9 @@
     "i18n/zh-TW.json",
     "plugin.toml",
     "pyproject.toml",
+    "ruff.toml",
     "tests/test_selfie.py",
     "tests/test_smoke.py"
   ],
-  "source_sha256": "bdb930dbe185dc9ff54255e2c31f8ef0a3fefd0c46807ad1a08f99766eef71cb"
+  "source_sha256": "c3039d57ecac75c02aae2d4c7ef05e245a31565c4a6af52b813ee6a01a3db64a"
 }
