@@ -4,7 +4,7 @@ name = "自拍"
 description = "根据角色参考图生成自拍并推送到聊天框。用户要求或角色主动想分享自拍时均可调用。"
 short_description = "Generate and share character selfies from a reference image on request or when the character wants to share one."
 keywords = ["自拍", "照片", "selfie", "セルフィー", "自撮り", "셀카", "селфи", "autofoto"]
-version = "0.1.0"
+version = "0.1.1"
 entry = "plugin.plugins.selfie:SelfiePlugin"
 
 [plugin.author]
